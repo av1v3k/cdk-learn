@@ -1,1 +1,82 @@
 <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+
+
+
+<!-- Menu-->
+<!-- <button mat-raised-button color="primary" [cdkMenuTriggerFor]="menu" class="example-standalone-trigger">Click me!</button> -->
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<button mat-icon-button aria-label="Example icon button with a vertical three dot icon" [cdkMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+</button>
+
+<ng-template #menu>
+    <mat-list cdkMenu>
+        <mat-list-item>
+            <cdk-virtual-scroll-viewport appendOnly itemSize="30" class="example-viewport">
+                <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+            </cdk-virtual-scroll-viewport>
+        </mat-list-item>
+        <!-- <mat-list-item><button mat-icon-button color="primary"
+                cdkMenuItem><mat-icon>home</mat-icon>Refresh</button></mat-list-item>
+        <mat-list-item><button mat-icon-button color="primary"
+                cdkMenuItem><mat-icon>menu</mat-icon>Settings</button></mat-list-item>
+        <mat-list-item><button mat-icon-button color="primary"
+                cdkMenuItem><mat-icon>favorite</mat-icon>Help</button></mat-list-item>
+        <mat-list-item><button mat-icon-button color="primary" cdkMenuItem><mat-icon>open_in_new</mat-icon>Sign
+                out</button></mat-list-item> -->
+    </mat-list>
+</ng-template>
+<!--Menu Ends-->
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<!--Scrolling-->
+<cdk-virtual-scroll-viewport appendOnly itemSize="30" class="example-viewport">
+    <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+</cdk-virtual-scroll-viewport>
+<!--Scrolling Ends-->
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<ng-container *ngIf="listItemsData$">
+    <div *ngFor="let item of listItemsData$ | async">
+        City: {{item.city}}
+    </div>
+</ng-container>
+
+<!-- <div class="content" role="main">
+    <ng-container *ngIf="!showLoader; else loader">
+      <app-the-amazing-list [listItems]="$listItemsData | async"></app-the-amazing-list>
+    </ng-container>
+  </div>
+  
+  <ng-template #loader>
+    <app-loader></app-loader>
+  </ng-template> -->
