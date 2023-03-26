@@ -13,7 +13,7 @@ const LOADER_TIMEOUT = 0;
 })
 export class AppComponent implements OnInit {
   title = 'cdk-explore';
-  items = Array.from({ length: 100000 }).map((_, i) => `Item #${i}`);
+  items = Array.from({ length: 1000 }).map((_, i) => `Item #${i}`);
   listItemsData$: Observable<IAddress[]>;
   showLoader: boolean = false;
   constructor(private dataService: DataService) {

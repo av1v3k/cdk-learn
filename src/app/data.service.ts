@@ -13,8 +13,9 @@ export class DataService {
   getUsers(): Observable<IAddress[]> {
     return new Observable((observer) => {
       observer.next(
-        Array.from({ length: 50 }).map((_, i) => {
+        Array.from({ length: 5000 }).map((_, i) => {
           return {
+            name: faker.name.fullName(),
             city: faker.address.city(),
             buildingNumber: faker.address.buildingNumber(),
             state: faker.address.state(),
@@ -23,6 +24,9 @@ export class DataService {
             zipCode: faker.address.zipCode(),
             latitude: faker.address.latitude(),
             longitude: faker.address.longitude(),
+            picture: faker.image.food(),
+            phone: faker.phone.number(),
+            email: faker.internet.email() 
           }
         })
       );
