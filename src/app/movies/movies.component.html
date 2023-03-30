@@ -1,0 +1,7 @@
+<p>movies works!</p>
+
+<ul>
+    <li *ngFor="let item of movies$ | async">
+        {{item.name}}
+    </li>
+</ul>

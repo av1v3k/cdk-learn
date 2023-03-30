@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
     this.showLoader = true;
     setTimeout(() => {
       this.showLoader = false;
-      this.listItemsData$ = this.dataService.getUsers();
+      // this.listItemsData$ = this.dataService.getUsers();
+      // this.listItemsData$ = this.dataService.getUsers();
     }, LOADER_TIMEOUT)
   }
 
